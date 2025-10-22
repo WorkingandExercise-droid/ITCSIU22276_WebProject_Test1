@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setting</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 20% 40% 40%; /* top 20%, bottom1 40%, bottom2 40% */
+      font-family: Arial, sans-serif;
+    }
+
+    .top {
+      background-color: #87ceeb;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      border: 1px solid black;
+    }
+
+    .bottom {
+      display: grid;
+      grid-template-rows: 20% 80%; /* top-bottom 20%, bottom-bottom 80% */
+      border: 1px solid black;
+    }
+
+    .bottom-top {
+      background-color: #f4a261;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid black;
+    }
+
+    .bottom-bottom {
+      display: grid;
+      grid-template-columns: 30% 70%; /* left 30%, right 70% */
+      border-top: 1px solid black;
+    }
+
+    .bottom-left {
+      background-color: #fff;
+      border-right: 1px solid black;
+    }
+
+    .bottom-right {
+      display: grid;
+      grid-template-rows: 1fr 1fr; /* two rows */
+    }
+
+    .bottom-right div {
+      border-bottom: 1px solid black;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      font-size: 16px;
+    }
+
+    .bottom-right div:last-child {
+      border-bottom: none;
+    }
+
+    /* Optional colors to distinguish */
+    .bottom1 { background-color: none; }
+    .bottom2 { background-color: none; }
+
+    .bottom1 .bottom-top { background-color: gray; }
+    .bottom1 .bottom-left { background-color: #fff; }
+    .bottom1 .bottom-right div:nth-child(1) { background-color: #fff; }
+    .bottom1 .bottom-right div:nth-child(2) { background-color: #fff; }
+
+    .bottom2 .bottom-top { background-color: gray; }
+    .bottom2 .bottom-left { background-color: #fff; }
+    .bottom2 .bottom-right div:nth-child(1) { background-color: #fff; }
+    .bottom2 .bottom-right div:nth-child(2) { background-color: #fff; }
+
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span style="font-size: 24px; cursor: pointer;">⚙️</span>
+    Setting
+  </div>
+
+  <div class="bottom bottom1">
+    <div class="bottom-top">Account</div>
+    <div class="bottom-bottom">
+      <div class="bottom-left"></div>
+      <div class="bottom-right">
+        <div>Change account name</div>
+        <div>Change password</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom bottom2">
+    <div class="bottom-top">Customization</div>
+    <div class="bottom-bottom">
+      <div class="bottom-left"></div>
+      <div class="bottom-right">
+        <div>Nightmode</div>
+        <div>Change background color</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
 
