@@ -1,123 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Displays</title>
-<style>
-  * {
-    box-sizing: border-box;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Displays</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-  body {
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 30% 70%; /* top 30%, bottom 70% */
-  }
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 30% 70%; /* top 30%, bottom 70% */
+      }
 
-  .top {
-    position: sticky;
-    top: 0;
-    border: 1px solid #000;
-    background: #f4a261;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+      .top {
+        position: sticky;
+        top: 0;
+        border: 1px solid #000;
+        background: #f4a261;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .search-container {
-    display: flex;
-    align-items: center;
-    width: 400px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    padding: 8px 15px;
-    background: white;
-  }
+      .search-container {
+        display: flex;
+        align-items: center;
+        width: 400px;
+        border: 2px solid #000;
+        border-radius: 25px;
+        padding: 8px 15px;
+        background: white;
+      }
 
-  .search-box {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 8px;
-  }
+      .search-box {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        padding: 8px;
+      }
 
-  .search-button {
-    background: #e76f51;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-weight: bold;
-    color: white;
-  }
+      .search-button {
+        background: #e76f51;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        color: white;
+      }
 
-  .search-button:hover {
-    background: #d65a3b;
-  }
+      .search-button:hover {
+        background: #d65a3b;
+      }
 
-  .bottom {
-    border: 1px solid #000;
-    background: #e9c46a;
-    overflow-y: auto; /* enables vertical scroll */
-    padding: 20px;
-  }
+      .bottom {
+        border: 1px solid #000;
+        background: #e9c46a;
+        overflow-y: auto; /* enables vertical scroll */
+        padding: 20px;
+      }
 
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row */
-    gap: 20px;
-  }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 per row */
+        gap: 20px;
+      }
 
-  .product {
-    background: #fff;
-    border: 1px solid #000;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
-  }
+      .product {
+        background: #fff;
+        border: 1px solid #000;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+      }
 
-  .product img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
+      .product img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
 
-  /* make scrollbar visible and styled */
-  .bottom::-webkit-scrollbar {
-    width: 12px;
-  }
+      /* make scrollbar visible and styled */
+      .bottom::-webkit-scrollbar {
+        width: 12px;
+      }
 
-  .bottom::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 6px;
-  }
+      .bottom::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 6px;
+      }
 
-  .bottom::-webkit-scrollbar-thumb:hover {
-    background: #333;
-  }
-</style>
-</head>
-<body>
-  <div class="top">
-    <div class="search-container">
-      <input class="search-box" type="text" placeholder="Search books...">
-      <button class="search-button">Search</button>
+      .bottom::-webkit-scrollbar-thumb:hover {
+        background: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <div class="search-container">
+        <input class="search-box" type="text" placeholder="Search books..." />
+        <button class="search-button">Search</button>
+      </div>
     </div>
-  </div>
 
-  <div class="bottom">
-    <div class="product-grid">
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 1</p></div>
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 2</p></div>
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 3</p></div>
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 4</p></div>
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 5</p></div>
-      <div class="product"><img src="../../../Statics/download.png"><p>Product 6</p></div>
+    <div class="bottom">
+      <div class="product-grid">
+        <div class="product">
+          <img src="../../../Statics/book_pics/bright_book.jpg" />
+          <p>bright book</p>
+        </div>
+        <div class="product">
+          <img src="../../../Statics/book_pics/good_company.jpg" />
+          <p>good company</p>
+        </div>
+        <div class="product">
+          <img src="../../../Statics/book_pics/library.jpg" />
+          <p>library</p>
+        </div>
+        <div class="product">
+          <img src="../../../Statics/book_pics/literature.jpg" />
+          <p>literature</p>
+        </div>
+        <div class="product">
+          <img src="../../../Statics/book_pics/math.jpg" />
+          <p>math</p>
+        </div>
+        <div class="product">
+          <img src="../../../Statics/book_pics/physic.jpg" />
+          <p>physic</p>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
