@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Setting</title>
   <style>
     * {
@@ -14,7 +14,7 @@
     body {
       height: 100vh;
       display: grid;
-      grid-template-rows: 20% 40% 40%; /* top 20%, bottom1 40%, bottom2 40% */
+      grid-template-rows: 20% 40% 40% auto;
       font-family: Arial, sans-serif;
     }
 
@@ -30,7 +30,7 @@
 
     .bottom {
       display: grid;
-      grid-template-rows: 20% 80%; /* top-bottom 20%, bottom-bottom 80% */
+      grid-template-rows: 20% 80%;
       border: 1px solid black;
     }
 
@@ -46,7 +46,7 @@
 
     .bottom-bottom {
       display: grid;
-      grid-template-columns: 30% 70%; /* left 30%, right 70% */
+      grid-template-columns: 30% 70%;
       border-top: 1px solid black;
     }
 
@@ -57,7 +57,7 @@
 
     .bottom-right {
       display: grid;
-      grid-template-rows: 1fr 1fr; /* two rows */
+      grid-template-rows: 1fr 1fr;
     }
 
     .bottom-right div {
@@ -72,20 +72,21 @@
       border-bottom: none;
     }
 
-    /* Optional colors to distinguish */
-    .bottom1 { background-color: none; }
-    .bottom2 { background-color: none; }
+    .clickable {
+      cursor: pointer;
+    }
 
-    .bottom1 .bottom-top { background-color: gray; }
-    .bottom1 .bottom-left { background-color: #fff; }
-    .bottom1 .bottom-right div:nth-child(1) { background-color: #fff; }
-    .bottom1 .bottom-right div:nth-child(2) { background-color: #fff; }
+    .clickable:hover {
+      background-color: #e0e0e0;
+    }
 
-    .bottom2 .bottom-top { background-color: gray; }
-    .bottom2 .bottom-left { background-color: #fff; }
-    .bottom2 .bottom-right div:nth-child(1) { background-color: #fff; }
-    .bottom2 .bottom-right div:nth-child(2) { background-color: #fff; }
-
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid black;
+      border-color: aqua;
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -99,8 +100,8 @@
     <div class="bottom-bottom">
       <div class="bottom-left"></div>
       <div class="bottom-right">
-        <div>Change account name</div>
-        <div>Change password</div>
+        <div id="changeName" class="clickable">Change account name</div>
+        <div id="changePassword" class="clickable">Change password</div>
       </div>
     </div>
   </div>
@@ -111,11 +112,25 @@
       <div class="bottom-left"></div>
       <div class="bottom-right">
         <div>Nightmode</div>
-        <div>Change background color</div>
+        <div id="changeBg" class="clickable">Change background color</div>
       </div>
     </div>
   </div>
 
+  <iframe id="contentFrame" src=""></iframe>
+
+  <script>
+    const iframe = document.getElementById("contentFrame");
+
+    const openSettingsPage = () => {
+      iframe.src = "./ChangeAccountName/index.html";
+      iframe.style.display = "block"; // show it when clicked
+      console.log("Loaded:", iframe.src);
+    };
+
+    document.getElementById("changeName").addEventListener("click", openSettingsPage);
+    document.getElementById("changePassword").addEventListener("click", openSettingsPage);
+    document.getElementById("changeBg").addEventListener("click", openSettingsPage);
+  </script>
 </body>
 </html>
-
